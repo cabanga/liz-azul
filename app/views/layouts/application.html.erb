@@ -11,6 +11,14 @@
 
   <body>
     <%= render 'layouts/menu/sidbar' %>
-    <%= yield %>
+    <div class="main-content">
+
+      <%= render 'layouts/menu/navbar' %>
+      <%= yield %>
+
+    </div>
+    
+
+    
   </body>
 </html>
