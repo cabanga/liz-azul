@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @agrupamento.nome %>
+</p>
+
+<p>
+  <strong>Numero:</strong>
+  <%= @agrupamento.numero %>
+</p>
+
+<p>
+  <strong>Lema:</strong>
+  <%= @agrupamento.lema %>
+</p>
+
+<p>
+  <strong>Regiao:</strong>
+  <%= @agrupamento.regiao_id %>
+</p>
+
+<%= link_to 'Edit', edit_agrupamento_path(@agrupamento) %> |
+<%= link_to 'Back', agrupamentos_path %>

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @regiao.nome %>
+</p>
+
+<p>
+  <strong>Lema:</strong>
+  <%= @regiao.lema %>
+</p>
+
+<%= link_to 'Edit', edit_regiao_path(@regiao) %> |
+<%= link_to 'Back', regioes_path %>
