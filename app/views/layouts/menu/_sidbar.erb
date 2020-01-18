@@ -89,20 +89,23 @@
         </form>
         <!-- Navigation -->
         <ul class="navbar-nav">
+        
           <li class="nav-item  active ">
             <a class="nav-link  active " href="/">
               <i class="ni ni-tv-2 text-primary"></i> Dashboard
             </a>
           </li>
+
           <li class="nav-item">
             <%= link_to regioes_path, class: "nav-link" do %>
               <i class="ni ni-planet text-blue"></i> REGIÕES
             <% end %>
           </li>
+
           <li class="nav-item">
-            <a class="nav-link " href="./examples/maps.html">
-              <i class="ni ni-pin-3 text-orange"></i> Maps
-            </a>
+            <%= link_to agrupamentos_path, class: "nav-link" do %>
+              <i class="ni ni-planet text-blue"></i> AGRUPAMENTOS
+            <% end %>
           </li>
 
 

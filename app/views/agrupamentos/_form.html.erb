@@ -1,37 +1,78 @@
-<%= form_with(model: agrupamento, local: true) do |form| %>
-  <% if agrupamento.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(agrupamento.errors.count, "error") %> prohibited this agrupamento from being saved:</h2>
+<!-- Header -->
+<div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
+  <div class="container-fluid">
+    <div class="header-body"></div>
+  </div>
+</div>
 
-      <ul>
-        <% agrupamento.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+<div class="container-fluid mt--7">
+  <div class="row justify-content-center">
+
+    <div class="col-lg-6 col-md-8">
+      <div class="card bg-secondary shadow border-0">
+
+        <div class="card-body px-lg-5 py-lg-5">
+          <div class="text-center text-muted mb-4">
+            <h3><%= agrupamento.id.blank? ? 'Adicionar agrupamento' : 'Actualizar agrupamento'%></h3>
+          </div>
+          <%= form_with(model: agrupamento, local: true) do |form| %>
+            <% if agrupamento.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(agrupamento.errors.count, "error") %> prohibited this regiao from being saved:</h2>
+
+                <ul>
+                  <% agrupamento.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
+
+            <div class="form-group">
+              <div class="input-group input-group-alternative mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                </div>
+                <%= form.text_field :nome, class: "form-control", placeholder: "Nome do agru./paroquia" %>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="input-group input-group-alternative mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                </div>
+                <%= form.text_field :numero, class: "form-control", placeholder: "Nº do agrupamento" %>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="input-group input-group-alternative mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                </div>
+                <%= form.text_field :lema, class: "form-control", placeholder: "lema do agrupamento" %>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="input-group input-group-alternative mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                </div>
+                <%= form.text_field :regiao_id, class: "form-control", placeholder: "Região associada" %>
+              </div>
+            </div>
+
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary mt-4"><%= agrupamento.id.blank? ? 'Registar' : 'Actualizar'%></button>
+              <%= link_to 'Cancelar', agrupamentos_path, class: "btn btn-secondary mt-4" %>
+            </div>
+          <% end %>
+        </div>
+
+      </div>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= form.label :nome %>
-    <%= form.text_field :nome %>
   </div>
-
-  <div class="field">
-    <%= form.label :numero %>
-    <%= form.number_field :numero %>
-  </div>
-
-  <div class="field">
-    <%= form.label :lema %>
-    <%= form.text_field :lema %>
-  </div>
-
-  <div class="field">
-    <%= form.label :regiao_id %>
-    <%= form.text_field :regiao_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

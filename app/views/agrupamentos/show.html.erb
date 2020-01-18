@@ -1,24 +1,18 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Nome:</strong>
-  <%= @agrupamento.nome %>
-</p>
-
-<p>
-  <strong>Numero:</strong>
-  <%= @agrupamento.numero %>
-</p>
-
-<p>
-  <strong>Lema:</strong>
-  <%= @agrupamento.lema %>
-</p>
-
-<p>
-  <strong>Regiao:</strong>
-  <%= @agrupamento.regiao_id %>
-</p>
-
-<%= link_to 'Edit', edit_agrupamento_path(@agrupamento) %> |
-<%= link_to 'Back', agrupamentos_path %>
+<!-- Header -->
+<div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 600px; background-image: url(../assets/img/theme/profile-cover.jpg); background-size: cover; background-position: center top;">
+  <!-- Mask -->
+  <span class="mask bg-gradient-default opacity-8"></span>
+  <!-- Header container -->
+  <div class="container-fluid d-flex align-items-center">
+    <div class="row">
+      <div class="col-lg-12 col-md-10">
+        <h1 class="display-2 text-white"><%= "#{@agrupamento.nome} - #{@agrupamento.regiao.nome}" %></h1>
+        <p class="text-white">Nº <%= @agrupamento.numero %></p>
+        <p class="text-white mt-0 mb-5"><%= @agrupamento.lema %></p>
+        <%= link_to 'Actualizar', edit_agrupamento_path(@agrupamento), class: "btn btn-success" %>
+        <%= link_to 'Eliminar', edit_agrupamento_path(@agrupamento), class: "btn btn-danger" %>
+       
+      </div>
+    </div>
+  </div>
+</div>
