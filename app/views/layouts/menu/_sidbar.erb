@@ -96,22 +96,48 @@
             </a>
           </li>
 
-          <li class="nav-item">
-            <%= link_to regioes_path, class: "nav-link" do %>
-              <i class="ni ni-planet text-blue"></i> REGIÕES
-            <% end %>
-          </li>
-
-          <li class="nav-item">
-            <%= link_to agrupamentos_path, class: "nav-link" do %>
-              <i class="ni ni-planet text-blue"></i> AGRUPAMENTOS
-            <% end %>
-          </li>
-
-          <% if true %>
+          <% if false %>
             <li class="nav-item">
-              <%= link_to admin_seccoes_path, class: "nav-link" do %>
-                <i class="ni ni-planet text-blue"></i> SECÇÕES
+              <%= link_to regioes_path, class: "nav-link" do %>
+                <i class="ni ni-planet text-blue"></i> REGIÕES
+              <% end %>
+            </li>
+
+            <li class="nav-item">
+              <%= link_to agrupamentos_path, class: "nav-link" do %>
+                <i class="ni ni-planet text-blue"></i> AGRUPAMENTOS
+              <% end %>
+            </li>            
+          <% end %>
+
+          <% if session[:session_admin] %>
+            <li class="nav-item">
+              <%= link_to agrupamento_primeira_seccao_path(@agrupamento), class: "nav-link" do %>
+                <i class="ni ni-planet text-blue"></i> I SECÇÃO
+              <% end %>
+            </li>
+
+            <li class="nav-item">
+              <%= link_to agrupamento_segunda_seccao_path(@agrupamento), class: "nav-link" do %>
+                <i class="ni ni-planet text-blue"></i> II SECÇÃO
+              <% end %>
+            </li>
+
+            <li class="nav-item">
+              <%= link_to agrupamento_terceira_seccao_path(@agrupamento), class: "nav-link" do %>
+                <i class="ni ni-planet text-blue"></i> III SECÇÃO
+              <% end %>
+            </li>
+
+            <li class="nav-item">
+              <%= link_to agrupamento_quarta_seccao_path(@agrupamento), class: "nav-link" do %>
+                <i class="ni ni-planet text-blue"></i> IV SECÇÃO
+              <% end %>
+            </li>
+
+            <li class="nav-item">
+              <%= link_to agrupamento_primeira_seccao_path(@agrupamento), class: "nav-link" do %>
+                <i class="ni ni-planet text-blue"></i> DIRIGENTES
               <% end %>
             </li>
           <% end %>
@@ -126,9 +152,9 @@
         <!-- Navigation -->
         <ul class="navbar-nav mb-md-3">
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <%= link_to destroy_user_session_url, method: :delete, class: "nav-link" do %>
               <i class="ni ni-spaceship"></i> Terminar sessão
-            </a>
+            <% end %>
           </li>
 
         </ul>

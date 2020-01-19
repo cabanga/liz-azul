@@ -9,8 +9,10 @@ class DashboardController < ApplicationController
 
   def index
     puts "=="*20
-    p params
+    p session[:session_admin]
     puts "=="*20
+
+    @agrupamento = current_user.current_ag
   end
 
   def admin_seccoes
@@ -34,7 +36,7 @@ class DashboardController < ApplicationController
   end
 
   def admin_agrupamento
-    #session[session_admin] = params[:session_admin].blank? ? flase : true
+    session[:session_admin] = params[:session_admin].blank? ? flase : true
   end
 
   private
