@@ -15,7 +15,9 @@
           <div class="text-center text-muted mb-4">
             <h3><%= agrupamento.id.blank? ? 'Adicionar agrupamento' : 'Actualizar agrupamento'%></h3>
           </div>
-          <%= form_with(model: agrupamento, local: true) do |form| %>
+
+          <%= simple_form_for(agrupamento) do |f| %>
+
             <% if agrupamento.errors.any? %>
               <div id="error_explanation">
                 <h2><%= pluralize(agrupamento.errors.count, "error") %> prohibited this regiao from being saved:</h2>
@@ -33,7 +35,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
                 </div>
-                <%= form.text_field :nome, class: "form-control", placeholder: "Nome do agru./paroquia" %>
+                <%= f.input :nome, class: "form-control", placeholder: "Nome do agru./paroquia" %>
               </div>
             </div>
 
@@ -42,7 +44,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                 </div>
-                <%= form.text_field :numero, class: "form-control", placeholder: "Nº do agrupamento" %>
+                <%= f.input :numero, class: "form-control", placeholder: "Nº do agrupamento" %>
               </div>
             </div>
 
@@ -51,7 +53,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                 </div>
-                <%= form.text_field :lema, class: "form-control", placeholder: "lema do agrupamento" %>
+                <%= f.input :lema, class: "form-control", placeholder: "lema do agrupamento" %>
               </div>
             </div>
 
@@ -60,7 +62,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                 </div>
-                <%= form.text_field :regiao_id, class: "form-control", placeholder: "Região associada" %>
+                <%= f.association :regiao, label: "Região associada", collection: Regiao.all.order(:nome), label_method: :nome, value_method: :id, include_blank: false %>
               </div>
             </div>
 

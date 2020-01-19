@@ -14,7 +14,7 @@
                 <div class="card-header bg-transparent">
                     <div class="row align-items-center">
                         <div class="col">
-                            <%= link_to 'Nova agrupamento', new_agrupamento_path, class: "btn btn-sm btn-primary" %>
+                            <%= link_to 'Adicionar escuteiro', new_agrupamento_escuteiro_path(@agrupamento), class: "btn btn-sm btn-primary" %>
                         </div>
                     </div>
                 </div>
@@ -37,15 +37,21 @@
           <table class="table align-items-center table-flush">
             <thead class="thead-light">
               <tr>
-                <th scope="col">#</th>
                 <th scope="col">Nome</th>
-                <th scope="col">Número</th>
-                <th scope="col">Região</th>
+                <th scope="col">Idade</th>
+                <th scope="col">Nº ref.</th>
                 <th scope="col"></th>
               </tr>
             </thead>
             <tbody>
-
+              <% @agrupamento.lobitos.each do |escuteiro| %>
+                <tr>
+                  <td><%= escuteiro.nome %></td>
+                  <td><%= calc_idade(escuteiro) %></td>
+                  <td><%= escuteiro.referencia %></td>
+                  <td><%= link_to 'Detalhes', agrupamento_escuteiro_path(@agrupamento, escuteiro), class: "btn btn-sm btn-primary" %></td>
+                </tr>
+              <% end %>
             </tbody>
           </table>
 

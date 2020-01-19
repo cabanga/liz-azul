@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Escuteiros</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Data nascimento</th>
+      <th>Contacto</th>
+      <th>Agrupamento</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @escuteiros.each do |escuteiro| %>
+      <tr>
+        <td><%= escuteiro.nome %></td>
+        <td><%= escuteiro.data_nascimento %></td>
+        <td><%= escuteiro.contacto %></td>
+        <td><%= escuteiro.agrupamento_id %></td>
+        <td><%= link_to 'Show', escuteiro %></td>
+        <td><%= link_to 'Edit', edit_escuteiro_path(escuteiro) %></td>
+        <td><%= link_to 'Destroy', escuteiro, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Escuteiro', new_escuteiro_path %>

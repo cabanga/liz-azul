@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_17_144952) do
+ActiveRecord::Schema.define(version: 2020_01_18_200743) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,17 @@ ActiveRecord::Schema.define(version: 2020_01_17_144952) do
     t.index ["regiao_id"], name: "index_agrupamentos_on_regiao_id"
   end
 
+  create_table "escuteiros", force: :cascade do |t|
+    t.string "nome"
+    t.datetime "data_nascimento"
+    t.string "contacto"
+    t.string "referencia"
+    t.bigint "agrupamento_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["agrupamento_id"], name: "index_escuteiros_on_agrupamento_id"
+  end
+
   create_table "regioes", force: :cascade do |t|
     t.string "nome"
     t.string "lema"
@@ -33,4 +44,5 @@ ActiveRecord::Schema.define(version: 2020_01_17_144952) do
   end
 
   add_foreign_key "agrupamentos", "regioes"
+  add_foreign_key "escuteiros", "agrupamentos"
 end
