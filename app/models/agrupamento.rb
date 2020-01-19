@@ -3,9 +3,9 @@ class Agrupamento < ApplicationRecord
   has_many :escuteiros
 
   def lobitos
-    #escuteiros.average(:data_nascimento, :conditions => ['data_nascimento >= ?', 10])
-    #escuteiros.minimum(:amount, :conditions => ['data_nascimento >= ?', 10])
-    escuteiros.all.map{|escuteiro| calc(escuteiro) <= 10 ? escuteiro : nil}
+    lobinhos = []
+    lobinhos = escuteiros.all.map{|escuteiro| calc(escuteiro) <= 10 ? escuteiro : nil}
+    lobinhos.compact
   end
 
   def exploradores

@@ -1,6 +1,6 @@
 class EscuteirosController < ApplicationController
   before_action :set_escuteiro, only: [:show, :edit, :update, :destroy]
-  before_action :set_agrupamento, only: [:new, :create, :show]
+  before_action :set_agrupamento, only: [:new, :create, :edit, :update, :show]
 
   # GET /escuteiros
   # GET /escuteiros.json
@@ -45,7 +45,7 @@ class EscuteirosController < ApplicationController
   def update
     respond_to do |format|
       if @escuteiro.update(escuteiro_params)
-        format.html { redirect_to @escuteiro, notice: 'Escuteiro was successfully updated.' }
+        format.html { redirect_to agrupamento_admin_agrupamento_path(@agrupamento), notice: 'Escuteiro was successfully created.' }
         format.json { render :show, status: :ok, location: @escuteiro }
       else
         format.html { render :edit }
