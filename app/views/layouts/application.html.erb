@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>LizAzul</title>
+    <title>Liz azul</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -9,14 +9,17 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= render 'layouts/menu/sidbar' %>
-    <div class="main-content">
-
-      <%= render 'layouts/menu/navbar' %>
+  <body class="<%= @color_bg %>">
+    <% if user_signed_in? %>
+      <%= render 'layouts/menu/sidbar' %>
+      <div class="main-content">
+        <%= render 'layouts/menu/navbar' %>
+        <%= yield %>
+      </div>
+    <% else %>
       <%= yield %>
+    <% end %>
 
-    </div>
     
 
     

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   resources :agrupamentos do
     resources :escuteiros
     get '/admin_agrupamento', to: 'dashboard#admin_agrupamento', as: 'admin_agrupamento'
