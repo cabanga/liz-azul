@@ -3,23 +3,34 @@ class Agrupamento < ApplicationRecord
   has_many :escuteiros
 
   def lobitos
-    lobinhos = []
-    lobinhos = escuteiros.all.map{|escuteiro| calc(escuteiro) <= 10 ? escuteiro : nil}
-    lobinhos.compact
+    scout_list = []
+    scout_list = escuteiros.all.map{|escuteiro| (calc(escuteiro) <= 10) ? escuteiro : nil}
+    scout_list.compact
   end
 
   def exploradores
-    escuteiros.all.map{|escuteiro| calc(escuteiro) >= 10 && calc(escuteiro) <= 13 }
+    scout_list = []
+    scout_list = escuteiros.all.map{|escuteiro| (calc(escuteiro) >= 11 && calc(escuteiro) <= 14) ? escuteiro : nil}
+    scout_list.compact
   end
 
   def pioneiros
-    escuteiros.all.map{|escuteiro| calc(escuteiro) >= 14 && calc(escuteiro) <= 17 }
+    scout_list = []
+    scout_list = escuteiros.all.map{|escuteiro| (calc(escuteiro) >= 15 && calc(escuteiro) <= 17) ? escuteiro : nil}
+    scout_list.compact
   end
 
   def caminheiros
-    escuteiros.all.map{|escuteiro| calc(escuteiro) >= 18 && calc(escuteiro) <= 25 }
+    scout_list = []
+    scout_list = escuteiros.all.map{|escuteiro| (calc(escuteiro) >= 18 && calc(escuteiro) <= 25) ? escuteiro : nil}
+    scout_list.compact
   end
 
+  def dirigentes
+    scout_list = []
+    scout_list = escuteiros.all.map{|escuteiro| (calc(escuteiro) >= 26) ? escuteiro : nil}
+    scout_list.compact
+  end
 
   def calc(escuteiro)
     Date.today.year - escuteiro.data_nascimento.year
