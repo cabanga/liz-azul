@@ -1,6 +1,6 @@
 class EscuteirosController < ApplicationController
   before_action :set_escuteiro, only: [:show, :edit, :update, :destroy]
-  before_action :set_agrupamento, only: [:new, :create, :edit, :update, :show]
+  before_action :set_agrupamento, only: [:new, :create, :edit, :update, :show, :destroy]
 
   # GET /escuteiros
   # GET /escuteiros.json
@@ -59,7 +59,7 @@ class EscuteirosController < ApplicationController
   def destroy
     @escuteiro.destroy
     respond_to do |format|
-      format.html { redirect_to escuteiros_url, notice: 'Escuteiro was successfully destroyed.' }
+      format.html { redirect_to agrupamento_admin_agrupamento_path(@agrupamento), notice: 'Escuteiro was successfully created.' }
       format.json { head :no_content }
     end
   end
