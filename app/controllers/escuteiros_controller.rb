@@ -27,6 +27,7 @@ class EscuteirosController < ApplicationController
   def create
     @escuteiro = Escuteiro.new(escuteiro_params)
     @escuteiro.agrupamento = @agrupamento
+    @escuteiro.referencia = gerar_referencia
 
     respond_to do |format|
       if @escuteiro.save
@@ -37,6 +38,24 @@ class EscuteirosController < ApplicationController
         puts "=="*20
         format.html { render :new }
       end
+    end
+  end
+
+  def gerar_referencia
+    letra = "AEA"
+    ultimo_escuteiro = Escuteiro.last
+
+    if (ultimo_escuteiro.nil?)
+      return "#{letra}000001"
+    else
+      ref = ultimo_escuteiro.referencia
+      n = ref.to_s.split('')
+      n.shift
+      n.shift
+      n.shift
+      n = n.join('').to_i
+      n += 1
+      return "#{letra}#{n.to_s.rjust(6, '0')}"
     end
   end
 
