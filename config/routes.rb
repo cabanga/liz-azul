@@ -10,10 +10,9 @@ Rails.application.routes.draw do
     get '/quarta_seccao', to: 'dashboard#quarta_seccao', as: 'quarta_seccao'
   end
 
-  get '/admin_seccoes', to: 'dashboard#admin_seccoes', as: 'admin_seccoes'
+  get '/admin_manager', to: 'dashboard#admin_manager', as: 'admin_manager'
 
-  
+  resources :usuarios
   resources :regioes
-
   root 'dashboard#index'
 end

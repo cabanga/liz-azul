@@ -5,7 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one :user_admin
-  
+
+  enum role: {super_admin: 0, admin: 1}
+
   def current_ag
     user_admin.agrupamento
   end

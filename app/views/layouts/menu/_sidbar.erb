@@ -22,7 +22,14 @@
             </a>
           </li>
 
-          <% if false %>
+          <% if current_user.super_admin? %>
+            
+            <li class="nav-item">
+              <%= link_to usuarios_path, class: "nav-link" do %>
+                <i class="ni ni-planet text-blue"></i> UTILIZADORES
+              <% end %>
+            </li>
+
             <li class="nav-item">
               <%= link_to regioes_path, class: "nav-link" do %>
                 <i class="ni ni-planet text-blue"></i> REGIÕES
@@ -36,7 +43,7 @@
             </li>            
           <% end %>
 
-          <% if session[:session_admin] %>
+          <% if current_user.admin? && session[:session_admin] %>
             <li class="nav-item">
               <%= link_to agrupamento_primeira_seccao_path(@agrupamento), class: "nav-link" do %>
                 <i class="ni ni-planet text-blue"></i> I SECÇÃO

@@ -8,14 +8,15 @@ class DashboardController < ApplicationController
   ]
 
   def index
-    puts "=="*20
-    p session[:session_admin]
-    puts "=="*20
+    if current_user.super_admin?
+      redirect_to admin_manager_path 
+    else
+      @agrupamento = current_user.current_ag 
+    end
 
-    @agrupamento = current_user.current_ag
   end
 
-  def admin_seccoes
+  def admin_manager
     
   end
   
