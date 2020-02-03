@@ -8,6 +8,9 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/css/bootstrap-material-design.min.css"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/css/ripples.min.css"/>
+		<link rel="stylesheet" href="/css/bootstrap-material-datetimepicker.css" />
 
   </head>
 
@@ -22,11 +25,30 @@
       <%= yield %>
     <% end %>
 
-    
-    <script>
-      $('.datepicker').datepicker({
-      });
-    </script>
-    
+    <script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/js/ripples.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/js/material.min.js"></script>
+    <script type="text/javascript" src="https://rawgit.com/FezVrasta/bootstrap-material-design/master/dist/js/material.min.js"></script>
+    <script type="text/javascript" src="http://momentjs.com/downloads/moment-with-locales.min.js"></script>
+
+    <script type="text/javascript" src="/js/bootstrap-material-datetimepicker.js"></script>
+
+
+		
+		<script type="text/javascript">
+		$(document).ready(function()
+		{
+			$('.datepicker').bootstrapMaterialDatePicker
+			({
+				time: false,
+				clearButton: true
+			});
+
+
+			$.material.init()
+		});
+		</script>
+	
   </body>
 </html>

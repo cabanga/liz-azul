@@ -1,21 +1,19 @@
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
-
  *
  */
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
 @import '/argon-dashboard.min.css';
-
-
-.form-group{
+@import 'material_icons';
+.form-group {
     width: 90%!important;
 }
 
-.color_bg{
+.color_bg {
     background-color: #172b4d!important;
 }
 
 .bg-gradient-purple {
-    background: linear-gradient(87deg,#6a009e,#9f24dc)!important;
+    background: linear-gradient(87deg, #6a009e, #9f24dc)!important;
 }

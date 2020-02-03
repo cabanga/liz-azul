@@ -29,6 +29,7 @@
               </div>
             <% end %>
 
+
             <div class="form-group">
               <div class="input-group input-group-alternative mb-3">
                 <div class="input-group-prepend">
@@ -43,7 +44,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
                 </div>
-                <%= f.input :data_nascimento, as: :string, label: 'Data de nascimento', placeholder: "dd/mm/yyyy" %>
+                <%= f.input :data_nascimento, as: :string, input_html: { class: 'datepicker' }, label: 'Data de nascimento', placeholder: "dd/mm/yyyy" %>
               </div>
             </div>
 
