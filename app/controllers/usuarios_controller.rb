@@ -1,5 +1,5 @@
 class UsuariosController < ApplicationController
-    before_action :set_user, only: [:show, :edit, :update, :destroy]
+    before_action :set_user, only: [:show, :edit, :update, :destroy, :associate_user]
 
     def index
         @users = User.where.not(role: 0)
@@ -16,12 +16,25 @@ class UsuariosController < ApplicationController
     def edit
     end
 
+    def associate_user
+    end
+
     def create
-        @user = User.new(user_params)
+        @user = User.new
+
+        @user.nome = params[:nome]
+        @user.telefone = params[:telefone]
+        @user.email = params[:email]
+        @user.password = params[:password]
+        @user.password_confirmation = params[:password_confirmation]
 
         respond_to do |format|
             if @user.save
-                format.html { redirect_to @user, notice: 'user was successfully created.' }
+                associate = UserAdmin.create(user_id: @user.id, agrupamento_id: params[:agrupamento_id])
+                puts "=="*20
+                p associate
+
+                format.html { redirect_to admin_manager_path, notice: 'user was successfully created.' }
                 format.json { render :show, status: :created, location: @user }
             else
                 format.html { render :new }
@@ -56,7 +69,7 @@ class UsuariosController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:nome, :telefone, :email, :password, :password_confirmation)
+      params.require(:user).permit(:nome, :telefone, :email, :agrupamento_id, :password, :password_confirmation)
     end
 
 

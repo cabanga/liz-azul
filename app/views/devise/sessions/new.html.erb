@@ -43,7 +43,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                     </div>
-                    <%= f.input :password, required: false, input_html: { autocomplete: "current-password" } %>
+                    <%= f.input :password, label: false, required: false, input_html: { autocomplete: "current-password" } %>
                   </div>
                 </div>
 
@@ -64,11 +64,13 @@
 
 <style>
   .form-group.email.optional.user_email{
-    margin-bottom: 0;
+    margin-bottom: 0!important;
+    margin-top: 0!important;
   }
 
   .form-group.password.optional.user_password{
-    margin-bottom: 0;
+    margin-bottom: 0!important;
+    margin-top: 0!important;
   }
 
 </style>

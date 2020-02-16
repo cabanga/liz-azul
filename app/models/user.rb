@@ -9,6 +9,6 @@ class User < ApplicationRecord
   enum role: {super_admin: 0, admin: 1}
 
   def current_ag
-    user_admin.agrupamento
+    user_admin.agrupamento #if self.admin?
   end
 end

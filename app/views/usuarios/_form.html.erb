@@ -51,6 +51,15 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
                 </div>
+                <%= form.collection_select :agrupamento_id, Agrupamento.all.order(:nome), :id, :nome, class: "form-control" %>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="input-group input-group-alternative mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                </div>
                 <%= form.text_field :email, class: "form-control", placeholder: "Endereço de e-mail" %>
               </div>
             </div>
