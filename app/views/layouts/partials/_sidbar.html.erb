@@ -1,0 +1,28 @@
+<nav id="sidebar" aria-label="Main Navigation">
+    <div class="content-header bg-white-5">
+        <a class="font-w600 text-dual" href="index.html">
+            <i class="fa fa-circle-notch text-primary"></i>
+            <span class="smini-hide">
+                <span class="font-w700 font-size-h5">Kambandu</span>
+            </span>
+        </a>
+
+        <div>
+            <a class="d-lg-none text-dual ml-3" data-toggle="layout" data-action="sidebar_close" href="javascript:void(0)">
+                <i class="fa fa-times"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="content-side content-side-full">
+        <ul class="nav-main">
+            <li class="nav-main-item">
+                <a class="nav-main-link active" href="/">
+                    <i class="nav-main-link-icon si si-speedometer"></i>
+                    <span class="nav-main-link-name">Dashboard</span>
+                </a>
+            </li>
+            <%= render 'layouts/partials/menu_admin' if current_user  %>
+        </ul>
+    </div>
+</nav>
