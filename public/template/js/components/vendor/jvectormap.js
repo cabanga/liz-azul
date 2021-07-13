@@ -11,7 +11,7 @@ var VectorMap = (function() {
 	var $vectormap = $('[data-toggle="vectormap"]'),
 		colors = {
 			gray: {
-				100: '#f6f9fc',
+				100: '#6e47ac85',
 				200: '#e9ecef',
 				300: '#dee2e6',
 				400: '#ced4da',

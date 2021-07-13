@@ -2241,7 +2241,7 @@ pre code
 .table-hover tbody tr:hover
 {
     color: #525f7f;
-    background-color: #f6f9fc;
+    background-color: #6e47ac85;
 }
 
 .table-primary,
@@ -2548,7 +2548,7 @@ pre code
 .table-active > th,
 .table-active > td
 {
-    background-color: #f6f9fc;
+    background-color: #6e47ac85;
 }
 
 .table-hover .table-active:hover
@@ -2572,7 +2572,7 @@ pre code
 {
     color: #8898aa;
     border-color: #e9ecef; 
-    background-color: #f6f9fc;
+    background-color: #6e47ac85;
 }
 
 .table-dark
@@ -4679,7 +4679,7 @@ input[type='button'].btn-block
     text-decoration: none;
 
     color: #16181b;
-    background-color: #f6f9fc;
+    background-color: #6e47ac85;
 }
 .dropdown-item.active,
 .dropdown-item:active
@@ -6527,7 +6527,7 @@ input[type='button'].btn-block
     list-style: none;
 
     border-radius: .375rem; 
-    background-color: #f6f9fc;
+    background-color: #6e47ac85;
 
     flex-wrap: wrap;
 }
@@ -7359,7 +7359,7 @@ a.badge:focus
     text-decoration: none;
 
     color: #525f7f;
-    background-color: #f6f9fc;
+    background-color: #6e47ac85;
 }
 .list-group-item-action:active
 {
@@ -18384,7 +18384,7 @@ a.text-darker:focus
 }
 .breadcrumb-dark .breadcrumb-item a
 {
-    color: #f6f9fc;
+    color: #6e47ac85;
 }
 .breadcrumb-dark .breadcrumb-item a:hover
 {
@@ -18906,7 +18906,7 @@ a.text-darker:focus
     cursor: pointer;
 
     border: 0;
-    background-color: #f6f9fc;
+    background-color: #6e47ac85;
     box-shadow: none;
 }
 [data-toggle='buttons']:not(.btn-group-colors) > .btn:not(.active)
@@ -18934,7 +18934,7 @@ a.text-darker:focus
 }
 .btn-group-colors > .btn:not([class*='bg-'])
 {
-    border-color: #f6f9fc !important;
+    border-color: #6e47ac85 !important;
 }
 .btn-group-colors > .btn:before
 {
@@ -19034,7 +19034,7 @@ a.btn-icon-only
     color: #32325d;
     border: 0;
     border-radius: .375rem;
-    background-color: #f6f9fc;
+    background-color: #6e47ac85;
 
     -moz-appearance: none;
 }
@@ -21052,7 +21052,7 @@ textarea[resize='horizontal']
 
     border-radius: .4375rem;
     border-top-left-radius: 0;
-    background-color: #f6f9fc;
+    background-color: #6e47ac85;
 }
 
 .media-comment:hover .media-comment-avatar
@@ -21798,7 +21798,7 @@ textarea[resize='horizontal']
 .navbar-vertical.navbar-light
 {
     border-color: rgba(0, 0, 0, .05); 
-    background-color: #f6f9fc;
+    background-color: #6e47ac85;
 }
 .navbar-vertical.navbar-dark
 {
@@ -22014,7 +22014,7 @@ textarea[resize='horizontal']
     padding-left: 1rem;
 
     border-radius: .375rem; 
-    background: #f6f9fc;
+    background: #6e47ac85;
 }
 .navbar-vertical.navbar-expand-xs .lavalamp-object
 {
@@ -22145,7 +22145,7 @@ textarea[resize='horizontal']
         padding-left: 1rem;
 
         border-radius: .375rem; 
-        background: #f6f9fc;
+        background: #6e47ac85;
     }
     .navbar-vertical.navbar-expand-sm .lavalamp-object
     {
@@ -22277,7 +22277,7 @@ textarea[resize='horizontal']
         padding-left: 1rem;
 
         border-radius: .375rem; 
-        background: #f6f9fc;
+        background: #6e47ac85;
     }
     .navbar-vertical.navbar-expand-md .lavalamp-object
     {
@@ -22409,7 +22409,7 @@ textarea[resize='horizontal']
         padding-left: 1rem;
 
         border-radius: .375rem; 
-        background: #f6f9fc;
+        background: #6e47ac85;
     }
     .navbar-vertical.navbar-expand-lg .lavalamp-object
     {
@@ -22541,7 +22541,7 @@ textarea[resize='horizontal']
         padding-left: 1rem;
 
         border-radius: .375rem; 
-        background: #f6f9fc;
+        background: #6e47ac85;
     }
     .navbar-vertical.navbar-expand-xl .lavalamp-object
     {
@@ -24436,7 +24436,7 @@ textarea[resize='horizontal']
 .table .thead-light th
 {
     color: #8898aa; 
-    background-color: #f6f9fc;
+    background-color: #6e47ac85;
 }
 .table .thead-light th a
 {
@@ -29830,7 +29830,7 @@ html:not([dir='rtl']) .noUi-horizontal .noUi-handle
     text-decoration: none;
 
     color: #16181b;
-    background-color: #f6f9fc;
+    background-color: #6e47ac85;
 }
 
 .select2-container--default .select2-results__option--highlighted[aria-selected],
