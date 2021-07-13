@@ -8758,7 +8758,7 @@ a.close.disabled
 
 .bg-primary
 {
-    background-color: #5e72e4 !important;
+    background-color: #6e47ac !important;
 }
 
 a.bg-primary:hover,
@@ -8974,7 +8974,7 @@ button.bg-darker:focus
 
 .border-primary
 {
-    border-color: #5e72e4 !important;
+    border-color: #6e47ac !important;
 }
 
 .border-secondary
@@ -17736,7 +17736,7 @@ button.bg-darker:focus
 
 .text-primary
 {
-    color: #5e72e4 !important;
+    color: #6e47ac !important;
 }
 
 a.text-primary:hover,
@@ -19202,7 +19202,7 @@ a.btn-icon-only
 {
     z-index: 1;
 
-    border: 3px solid #5e72e4 !important;
+    border: 3px solid #6e47ac !important;
 }
 
 @media (min-width: 768px)
@@ -24893,7 +24893,7 @@ h6 > a
 
 .bg-blue
 {
-    background-color: #5e72e4 !important;
+    background-color: #6e47ac !important;
 }
 
 a.bg-blue:hover,
@@ -25173,7 +25173,7 @@ button.bg-lighter:focus
 
 .bg-gradient-orange
 {
-    background: linear-gradient(87deg, #fb6340 0, #fbb140 100%) !important;
+    background: linear-gradient(87deg, #ffc107 0, #fbb140 100%) !important;
 }
 
 .bg-gradient-yellow
@@ -26481,7 +26481,7 @@ button.section-darker:focus
 
 .text-blue
 {
-    color: #5e72e4 !important;
+    color: #6e47ac !important;
 }
 
 a.text-blue:hover,
