@@ -1,49 +1,60 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+        
+            <div class="card card-profile">
+                <img src="/template/img/theme/img-1-1000x600.jpg" alt="Image placeholder" class="card-img-top">
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-3 order-lg-2">
+                        <div class="card-profile-image">
+                            <a href="#"><img src="/template/img/theme/team-4.jpg" class="rounded-circle"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
+                    <div class="d-flex justify-content-between">
+                        <a href="<%= edit_scout_path(@scout) %>" class="btn btn-sm btn-info  mr-4 ">Actualizar</a>
+                        <%= link_to 'Eliminar', @scout, class: "btn btn-sm btn-danger float-right", method: :delete, data: { confirm: 'Tens certeza?' } %>
+                    </div>
+                </div>
+
+                <div class="card-body pt-0">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p><i class="ni education_hat mr-2"></i>INFORMAÇÕES DO ESCUTEIRO</p>
+                            <p><strong><%= @scout.name %></strong></p>
+                            <p><strong>Nº Referência:</strong> <%= @scout.reference_numer %></p>
+                            <p><strong>Data de Nascimento:</strong> <%= @scout.birth_at&.strftime("%d/%m/%Y") %></p>
+                            <p><strong>Data de Ingresso:</strong> <%= @scout.started_at&.strftime("%d/%m/%Y") %></p>
+                            <p><strong>Idade:</strong> <%= scout_year(@scout.birth_at)%></p>
+                            <p><strong>Tipo Identificação:</strong> <%= @scout.identification_type %></p>
+                            <p><strong>Nº Identificação:</strong> <%= @scout.identification_number %></p>
+                            <p><strong>Contacto:</strong> <%= @scout.cell_phone1 %></p>
+                        </div>
+
+                        <div class="col-md-6">
+                            <p><i class="ni education_hat mr-2"></i>INFORMAÇÕES DO ENCARREGADO</p>
+                            <p><strong>Nome Encarregado:</strong> <%= @scout.parent_name %></p>
+                            <p><strong>Contacto Encarregado:</strong> <%= @scout.cell_phone2 %></p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @scout.name %>
-</p>
 
-<p>
-  <strong>Identification type:</strong>
-  <%= @scout.identification_type %>
-</p>
-
-<p>
-  <strong>Identification number:</strong>
-  <%= @scout.identification_number %>
-</p>
-
-<p>
-  <strong>Started at:</strong>
-  <%= @scout.started_at %>
-</p>
-
-<p>
-  <strong>Parent name:</strong>
-  <%= @scout.parent_name %>
-</p>
-
-<p>
-  <strong>Cell phone1:</strong>
-  <%= @scout.cell_phone1 %>
-</p>
-
-<p>
-  <strong>Cell phone2:</strong>
-  <%= @scout.cell_phone2 %>
-</p>
-
-<p>
-  <strong>Reference numer:</strong>
-  <%= @scout.reference_numer %>
-</p>
-
-<p>
-  <strong>Slug:</strong>
-  <%= @scout.slug %>
-</p>
-
-<%= link_to 'Edit', edit_scout_path(@scout) %> |
-<%= link_to 'Back', scouts_path %>
