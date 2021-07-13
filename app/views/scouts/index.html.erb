@@ -1,43 +1,88 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Scouts</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Identification type</th>
-      <th>Identification number</th>
-      <th>Started at</th>
-      <th>Parent name</th>
-      <th>Cell phone1</th>
-      <th>Cell phone2</th>
-      <th>Reference numer</th>
-      <th>Slug</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @scouts.each do |scout| %>
-      <tr>
-        <td><%= scout.name %></td>
-        <td><%= scout.identification_type %></td>
-        <td><%= scout.identification_number %></td>
-        <td><%= scout.started_at %></td>
-        <td><%= scout.parent_name %></td>
-        <td><%= scout.cell_phone1 %></td>
-        <td><%= scout.cell_phone2 %></td>
-        <td><%= scout.reference_numer %></td>
-        <td><%= scout.slug %></td>
-        <td><%= link_to 'Show', scout %></td>
-        <td><%= link_to 'Edit', edit_scout_path(scout) %></td>
-        <td><%= link_to 'Destroy', scout, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="header bg-default pb-6">
+    <div class="container-fluid">
+        <div class="header-body">
+            <div class="row align-items-center py-4">
+                <div class="col-lg-6 col-7">
+                    <h6 class="h2 text-white d-inline-block mb-0">Dashboard</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page content -->
 
 <br>
+<br>
 
-<%= link_to 'New Scout', new_scout_path %>
+<div class="container-fluid mt--6">
+    <!-- Table -->
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <!-- Card header -->
+                <div class="card-header border-0">
+                <h3 class="mb-0">Lista de todos Escuteiros</h3>
+                </div>
+                <!-- Light table -->
+                <div class="table-responsive">
+                    <table class="table align-items-center table-flush">
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col" class="sort">Nome completo</th>
+                                <th scope="col" class="sort">Tipo Identidade</th>
+                                <th scope="col" class="sort">Nº Identidade</th>
+                                <th scope="col" class="sort">Data Nascimento</th>
+                                <th scope="col" class="sort">Idade</th>
+                                <th scope="col" class="sort">Data de Ingresso</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+
+                        <tbody class="list">
+                            <% @scouts.each do |scout| %>
+                                <tr>
+                                    <th scope="row">
+                                        <div class="media align-items-center">
+                                            <a href="#" class="avatar rounded-circle mr-3">
+                                            <img alt="Image placeholder" src="/template/img/theme/bootstrap.jpg">
+                                            </a>
+                                            <div class="media-body">
+                                                <span class="name mb-0 text-sm"><%= scout.name %></span>
+                                            </div>
+                                        </div>
+                                    </th>
+
+                                    <td class="budget"><%= scout.identification_type %></td>
+                                    <td class="budget"><%= scout.identification_number %></td>
+                                    <td class="budget"><%= scout.birth_at&.strftime("%d/%m/%Y") %></td>
+                                    <td class="budget"><%= scout_year(scout.birth_at) %></td>
+                                    <td class="budget"><%= scout.started_at&.strftime("%d/%m/%Y") %></td>
+                                    <td class="text-right">
+                                        <div class="dropdown">
+                                            <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fas fa-ellipsis-v"></i>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                                                <a class="dropdown-item" href="<%= scout_path(scout) %>">Ver detalhes</a>
+                                                <a class="dropdown-item" href="<%= edit_scout_path(scout) %>">Actualizar</a>
+                                                <%= link_to 'Eliminar', scout, class: "dropdown-item", method: :delete, data: { confirm: 'Are you sure?' } %>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            <% end %>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<br>

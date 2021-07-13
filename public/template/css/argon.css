@@ -2570,7 +2570,7 @@ pre code
 
 .table .thead-light th
 {
-    color: #8898aa;
+    color: #000000;
     border-color: #e9ecef; 
     background-color: #6e47ac85;
 }
@@ -24435,12 +24435,12 @@ textarea[resize='horizontal']
 
 .table .thead-light th
 {
-    color: #8898aa; 
+    color: #000000; 
     background-color: #6e47ac85;
 }
 .table .thead-light th a
 {
-    color: #8898aa;
+    color: #000000;
 }
 
 .table-hover tr
