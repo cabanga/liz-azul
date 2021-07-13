@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2021_07_13_140645) do
     t.string "name"
     t.integer "identification_type", default: 0, null: false
     t.string "identification_number"
+    t.datetime "birth_at"
     t.datetime "started_at"
     t.string "parent_name"
     t.string "cell_phone1"

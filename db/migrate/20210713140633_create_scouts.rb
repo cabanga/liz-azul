@@ -4,6 +4,7 @@ class CreateScouts < ActiveRecord::Migration[6.1]
       t.string :name
       t.integer :identification_type, null: false, default: 0
       t.string :identification_number
+      t.datetime :birth_at
       t.datetime :started_at
       t.string :parent_name
       t.string :cell_phone1
@@ -15,3 +16,4 @@ class CreateScouts < ActiveRecord::Migration[6.1]
     end
   end
 end
+

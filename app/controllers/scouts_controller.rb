@@ -23,6 +23,7 @@ class ScoutsController < ApplicationController
   def create
     @scout = Scout.new(scout_params)
 
+    @scout.identification_type = @scout.identification_type.to_i
     respond_to do |format|
       if @scout.save
         format.html { redirect_to @scout, notice: "Scout was successfully created." }
@@ -36,6 +37,8 @@ class ScoutsController < ApplicationController
 
   # PATCH/PUT /scouts/1 or /scouts/1.json
   def update
+    #@scout.identification_type = 1.to_i # @scout.identification_type.to_i
+
     respond_to do |format|
       if @scout.update(scout_params)
         format.html { redirect_to @scout, notice: "Scout was successfully updated." }
@@ -59,11 +62,22 @@ class ScoutsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_scout
-      @scout = Scout.find(params[:id])
+      @scout = Scout.friendly.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def scout_params
-      params.require(:scout).permit(:name, :identification_type, :identification_number, :started_at, :parent_name, :cell_phone1, :cell_phone2, :reference_numer, :slug)
+      params.require(:scout).permit(
+        :name, 
+        :identification_type, 
+        :identification_number, 
+        :started_at, 
+        :birth_at, 
+        :parent_name, 
+        :cell_phone1, 
+        :cell_phone2, 
+        :reference_numer, 
+        :slug
+      )
     end
 end
