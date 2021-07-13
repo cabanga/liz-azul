@@ -1,58 +1,57 @@
-
-<!-- Main Container -->
-<main id="main-container">
-
-    <div class="bg-image" style="background-image: url(<%= picture_home_path %>);">
-        <div class="hero-static bg-white-95">
-            <div class="content">
-            
-                <div class="row justify-content-center mt-8">
-                    <div class="col-md-8 col-lg-6 col-xl-3">
-                        <!-- Sign In Block -->
-                        <div class="block block-themed block-fx-shadow mb-0">
-                            <div class="block-header">
-                                <h3 class="block-title"><%= link_to 'Home', root_path %></h3>
-                                <div class="block-options">
-                                    <a class="btn-block-option font-size-sm" href="#">Esqueceu senha?</a>
-                                   
-                                </div>
-                            </div>
-                            <div class="block-content">
-                                <div class="p-sm-3 px-lg-4 py-lg-5">
-                                    
-                                    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), class: "js-validation-signin") do |f| %>
-
-                                        <div class="py-3">
-                                            <div class="form-group">
-                                                <%= f.input :email, autofocus: true, autocomplete: "email", placeholder: "usuario@email.com" %>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <%= f.input :password, placeholder: "****" %>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <div class="col-md-12">
-                                                <button type="submit" class="btn btn-block btn-dark">
-                                                    <i class="fa fa-fw fa-sign-in-alt mr-1"></i> Login
-                                                </button>
-                                            </div>
-                                        </div>
-
-                                    <% end %>
-
-                                </div>
-                            </div>
-                        </div>
-                        <!-- END Sign In Block -->
-                    </div>
-                </div>
+  <!-- Main content -->
+  <div class="main-content">
+    <!-- Header -->
+    <div class="header bg-gradient-primary py-7 py-lg-5 pt-lg-9">
+      <div class="container">
+        <div class="header-body text-center mb-7">
+          <div class="row justify-content-center">
+            <div class="col-xl-5 col-lg-6 col-md-8 px-5">
+              <h1 class="text-white">Inciar sessão!</h1>
             </div>
-            <div class="content content-full font-size-sm text-muted text-center">
-                <strong>Kambandu 2.1.0</strong> &copy; <span data-toggle="year-copy"></span>
-            </div>
+          </div>
         </div>
+      </div>
     </div>
-
-</main>
-
+    <!-- Page content -->
+    <div class="container mt--8 pb-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-5 col-md-7">
+          <div class="card bg-secondary border-0 mb-0">
+          
+            <div class="card-body px-lg-5 py-lg-5">
+              <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                <div class="form-group mb-3">
+                  <div class="input-group input-group-merge input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                    </div>
+                    <input class="form-control" name="user[email]" id="user_email" placeholder="Email" type="email">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group input-group-merge input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                    </div>
+                    <input class="form-control" name="user[password]" id="user_password" placeholder="Password" type="password">
+                  </div>
+                </div>
+                <div class="text-center">
+                  <button type="submit" class="btn btn-primary my-4 btn-block">Entrar agora</button>
+                </div>
+              <% end %>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-6">
+              <a href="#" class="text-light"><small>Lembrar senha?</small></a>
+            </div>
+            <div class="col-6 text-right">
+              <a href="#" class="text-light"><small>Nova conta</small></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer -->

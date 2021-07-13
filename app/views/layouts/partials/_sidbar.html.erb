@@ -1,28 +1,73 @@
-<nav id="sidebar" aria-label="Main Navigation">
-    <div class="content-header bg-white-5">
-        <a class="font-w600 text-dual" href="index.html">
-            <i class="fa fa-circle-notch text-primary"></i>
-            <span class="smini-hide">
-                <span class="font-w700 font-size-h5">Kambandu</span>
-            </span>
-        </a>
-
-        <div>
-            <a class="d-lg-none text-dual ml-3" data-toggle="layout" data-action="sidebar_close" href="javascript:void(0)">
-                <i class="fa fa-times"></i>
+<!-- Sidenav -->
+<nav class="sidenav navbar navbar-vertical  fixed-left  navbar-expand-xs navbar-light bg-white" id="sidenav-main">
+    <div class="scrollbar-inner">
+        <div class="sidenav-header  d-flex  align-items-center">
+            <a class="navbar-brand" href="javascript:void(0)">
+                <img src="/logo.png" class="navbar-brand-img" alt="...">
             </a>
-        </div>
-    </div>
 
-    <div class="content-side content-side-full">
-        <ul class="nav-main">
-            <li class="nav-main-item">
-                <a class="nav-main-link active" href="/">
-                    <i class="nav-main-link-icon si si-speedometer"></i>
-                    <span class="nav-main-link-name">Dashboard</span>
-                </a>
-            </li>
-            <%= render 'layouts/partials/menu_admin' if current_user  %>
-        </ul>
+            <div class=" ml-auto ">
+                <!-- Sidenav toggler -->
+                <div class="sidenav-toggler d-none d-xl-block" data-action="sidenav-unpin" data-target="#sidenav-main">
+                    <div class="sidenav-toggler-inner">
+                        <i class="sidenav-toggler-line"></i>
+                        <i class="sidenav-toggler-line"></i>
+                        <i class="sidenav-toggler-line"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="navbar-inner">
+            <!-- Collapse -->
+            <div class="collapse navbar-collapse" id="sidenav-collapse-main">
+                <!-- Nav items -->
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="<%= dashboard_path %>">
+                            <i class="ni ni-shop text-primary"></i>
+                            <span class="nav-link-text">Dashboards</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav mb-md-3">
+                    <li class="nav-item">
+                        <a class="nav-link" href="<%= dashboard_path %>" target="_blank">
+                        <i class="ni ni-spaceship"></i>
+                        <span class="nav-link-text">Registos</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<%= dashboard_path %>" target="_blank">
+                        <i class="ni ni-palette"></i>
+                        <span class="nav-link-text">Alunos inscritos</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<%= dashboard_path %>" target="_blank">
+                        <i class="ni ni-ui-04"></i>
+                        <span class="nav-link-text">Modulos & Capítulos</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<%= dashboard_path %>" target="_blank">
+                        <i class="ni ni-chart-pie-35"></i>
+                        <span class="nav-link-text">Configurações</span>
+                        </a>
+                    </li>
+                    
+                    <hr class="my-3">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="<%= destroy_user_session_path %>">
+                            <i class="ni ni-shop text-danger"></i>
+                            <span class="nav-link-text">Terminar sessão</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
     </div>
 </nav>
