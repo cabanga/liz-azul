@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  identification_type: 1
+  identification_number: MyString
+  started_at: 2021-07-13 15:06:33
+  parent_name: MyString
+  cell_phone1: MyString
+  cell_phone2: MyString
+  reference_numer: MyString
+  slug: MyString
+
+two:
+  name: MyString
+  identification_type: 1
+  identification_number: MyString
+  started_at: 2021-07-13 15:06:33
+  parent_name: MyString
+  cell_phone1: MyString
+  cell_phone2: MyString
+  reference_numer: MyString
+  slug: MyString

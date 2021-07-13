@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Year at:</strong>
+  <%= @subscrytion_year.year_at %>
+</p>
+
+<p>
+  <strong>Scout:</strong>
+  <%= @subscrytion_year.scout_id %>
+</p>
+
+<p>
+  <strong>Section:</strong>
+  <%= @subscrytion_year.section %>
+</p>
+
+<p>
+  <strong>Slug:</strong>
+  <%= @subscrytion_year.slug %>
+</p>
+
+<%= link_to 'Edit', edit_subscrytion_year_path(@subscrytion_year) %> |
+<%= link_to 'Back', subscrytion_years_path %>

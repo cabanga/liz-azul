@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @scout.name %>
+</p>
+
+<p>
+  <strong>Identification type:</strong>
+  <%= @scout.identification_type %>
+</p>
+
+<p>
+  <strong>Identification number:</strong>
+  <%= @scout.identification_number %>
+</p>
+
+<p>
+  <strong>Started at:</strong>
+  <%= @scout.started_at %>
+</p>
+
+<p>
+  <strong>Parent name:</strong>
+  <%= @scout.parent_name %>
+</p>
+
+<p>
+  <strong>Cell phone1:</strong>
+  <%= @scout.cell_phone1 %>
+</p>
+
+<p>
+  <strong>Cell phone2:</strong>
+  <%= @scout.cell_phone2 %>
+</p>
+
+<p>
+  <strong>Reference numer:</strong>
+  <%= @scout.reference_numer %>
+</p>
+
+<p>
+  <strong>Slug:</strong>
+  <%= @scout.slug %>
+</p>
+
+<%= link_to 'Edit', edit_scout_path(@scout) %> |
+<%= link_to 'Back', scouts_path %>

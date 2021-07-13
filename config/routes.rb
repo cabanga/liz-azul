@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :subscrytion_years
+  resources :scouts
   get 'site/index'
   devise_for :users
   root 'site#index'

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_12_110144) do
+ActiveRecord::Schema.define(version: 2021_07_13_140645) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,30 @@ ActiveRecord::Schema.define(version: 2021_07_12_110144) do
     t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
+  end
+
+  create_table "scouts", force: :cascade do |t|
+    t.string "name"
+    t.integer "identification_type", default: 0, null: false
+    t.string "identification_number"
+    t.datetime "started_at"
+    t.string "parent_name"
+    t.string "cell_phone1"
+    t.string "cell_phone2"
+    t.string "reference_numer"
+    t.string "slug"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "subscrytion_years", force: :cascade do |t|
+    t.datetime "year_at"
+    t.bigint "scout_id", null: false
+    t.integer "section", default: 1, null: false
+    t.string "slug"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["scout_id"], name: "index_subscrytion_years_on_scout_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -56,4 +80,5 @@ ActiveRecord::Schema.define(version: 2021_07_12_110144) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
+  add_foreign_key "subscrytion_years", "scouts"
 end
