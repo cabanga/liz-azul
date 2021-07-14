@@ -1,29 +1,75 @@
-<p id="notice"><%= notice %></p>
+<div class="header bg-default pb-6">
+    <div class="container-fluid">
+        <div class="header-body">
+            <div class="row align-items-center py-4">
+                <div class="col-lg-6 col-7">
+                    <h6 class="h2 text-white d-inline-block mb-0">Lista dos Cargos & Posições</h6>
+                    <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+                        <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                            <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
+                            <li class="breadcrumb-item"><a href="<%= dashboard_path %>">Dashboard</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Cargos & Posições</li>
+                        </ol>
+                    </nav>
+                </div>
 
-<h1>Positions</h1>
+                <div class="col text-right">
+                    <%= link_to 'Novo Cargo', new_position_path, class: "btn btn-success btn-sm" %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page content -->
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Slug</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<br>
+<br>
 
-  <tbody>
-    <% @positions.each do |position| %>
-      <tr>
-        <td><%= position.name %></td>
-        <td><%= position.slug %></td>
-        <td><%= link_to 'Show', position %></td>
-        <td><%= link_to 'Edit', edit_position_path(position) %></td>
-        <td><%= link_to 'Destroy', position, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="container-fluid mt--6">
+    <!-- Table -->
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <!-- Card header -->
+                <div class="card-header border-0">
+                <h3 class="mb-0">Lista dos Cargos & Posições</h3>
+                </div>
+                <!-- Light table -->
+                <div class="table-responsive">
+                    <table class="table align-items-center table-flush">
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col" class="sort">Posição</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+
+                        <tbody class="list">
+                            <% @positions.each do |position| %>
+                                <tr>
+                                    <td class="budget"><%= position.name.titleize %></td>
+                                    <td class="text-right">
+                                        <%= link_to 'Actualizar', edit_position_path(position), class: "btn btn-primary btn-sm" %>
+                                        <%= link_to 'Ver', position, class: "btn btn-secondary btn-sm" %>
+                                    </td>
+                                </tr>
+                            <% end %>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
 
 <br>
 
-<%= link_to 'New Position', new_position_path %>
+
+<style>
+    .table th, .table td {
+        padding: 15px;
+    }
+
+</style>
+
