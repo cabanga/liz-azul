@@ -6,7 +6,6 @@ class Scout < ApplicationRecord
     enum identification_type:  { bilhete_de_identidade: 0, cedula_pessoal: 1, passaporte: 2 }
 
     before_create { self.reference_numer = generate_reference }
-    before_update { self.reference_numer = generate_reference }
 
     def generate_reference
       letter_code = "AG11-"
