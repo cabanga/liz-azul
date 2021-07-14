@@ -25108,7 +25108,7 @@ button.bg-lighter:focus
 
 .bg-gradient-warning
 {
-    background: linear-gradient(87deg, #fb6340 0, #fbb140 100%) !important;
+    background: linear-gradient(87deg, #ffeb3b 0, #fbb140 100%) !important
 }
 
 .bg-gradient-danger
@@ -25464,7 +25464,7 @@ button.section-darker:focus
 
 .bg-gradient-warning
 {
-    background: linear-gradient(87deg, #fb6340 0, #fbb140 100%) !important;
+    background: linear-gradient(87deg, #ffeb3b 0, #fbb140 100%) !important
 }
 
 .bg-gradient-danger
