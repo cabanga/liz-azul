@@ -34,7 +34,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-username">Data de nascimento</label>
-                                    <%= f.input :birth_at, as: :date, start_year: Date.today.year - 50, end_year: Date.today.year, order: [:day, :month, :year], label: false %>
+                                    <%= f.input :birth_at, as: :date, start_year: Date.today.year - 50, end_year: Date.today.year, order: [:day, :month, :year], input_html: { type: 'date' }, label: false %>
                                 </div>
                             </div>
                             
@@ -49,7 +49,7 @@
                                     <%= f.input :identification_number, label: false %>
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-control-label" for="input-username">Data de inicio no movimento</label>
+                                    <label class="form-control-label" for="input-username">Data de Ingresso no movimento</label>
                                     <%= f.input :started_at, as: :date, start_year: Date.today.year - 51, end_year: Date.today.year, order: [:day, :month, :year], label: false %>
                                 </div>
 
