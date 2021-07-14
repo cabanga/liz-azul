@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :confirmations
+  resources :sections
+  resources :positions
   resources :scouts
   get 'site/index'
   devise_for :users
