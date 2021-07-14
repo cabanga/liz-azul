@@ -8,7 +8,7 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-3 order-lg-2">
                         <div class="card-profile-image">
-                            <a href="#"><img src="/template/img/theme/team-4.jpg" class="rounded-circle"></a>
+                            <a href="#"><img src="/user.jpg" class="rounded-circle"></a>
                         </div>
                     </div>
                 </div>
@@ -24,6 +24,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <p><i class="ni education_hat mr-2"></i>INFORMAÇÕES DO ESCUTEIRO</p>
+                            <hr>
                             <p><strong><%= @scout.name %></strong></p>
                             <p><strong>Nº Ident. Interna:</strong> <%= @scout.reference_numer %></p>
                             <p><strong>Data de Nascimento:</strong> <%= @scout.birth_at&.strftime("%d/%m/%Y") %></p>
@@ -36,6 +37,7 @@
 
                         <div class="col-md-6">
                             <p><i class="ni education_hat mr-2"></i>INFORMAÇÕES DO ENCARREGADO</p>
+                            <hr>
                             <p><strong>Nome Encarregado:</strong> <%= @scout.parent_name %></p>
                             <p><strong>Contacto Encarregado:</strong> <%= @scout.cell_phone2 %></p>
                         </div>
