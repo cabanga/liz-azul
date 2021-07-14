@@ -29,11 +29,12 @@
                         <thead class="thead-light">
                             <tr>
                                 <th scope="col" class="sort">Nome completo</th>
+                                <th scope="col" class="sort">Nº Ident. Interna (NII)</th>
                                 <th scope="col" class="sort">Tipo Identidade</th>
                                 <th scope="col" class="sort">Nº Identidade</th>
-                                <th scope="col" class="sort">Data Nascimento</th>
-                                <th scope="col" class="sort">Idade</th>
-                                <th scope="col" class="sort">Data de Ingresso</th>
+                                <th scope="col" class="sort text-center">Data Nascimento</th>
+                                <th scope="col" class="sort text-center">Idade</th>
+                                <th scope="col" class="sort text-center">Data de Ingresso</th>
                                 <th scope="col"></th>
                             </tr>
                         </thead>
@@ -52,11 +53,12 @@
                                         </div>
                                     </th>
 
+                                    <td class="budget"><%= scout.reference_numer %></td>
                                     <td class="budget"><%= scout.identification_type %></td>
                                     <td class="budget"><%= scout.identification_number %></td>
-                                    <td class="budget"><%= scout.birth_at&.strftime("%d/%m/%Y") %></td>
-                                    <td class="budget"><%= scout_year(scout.birth_at) %></td>
-                                    <td class="budget"><%= scout.started_at&.strftime("%d/%m/%Y") %></td>
+                                    <td class="budget text-center"><%= scout.birth_at&.strftime("%d/%m/%Y") %></td>
+                                    <td class="budget text-center"><%= scout_year(scout.birth_at) %></td>
+                                    <td class="budget text-center"><%= scout.started_at&.strftime("%d/%m/%Y") %></td>
                                     <td class="text-right">
                                         <div class="dropdown">
                                             <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
