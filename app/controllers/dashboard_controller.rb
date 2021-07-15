@@ -2,7 +2,10 @@ class DashboardController < ApplicationController
   before_action :authenticate_user!
 
   def index
-
+    @lobitos = Confirmation.all.where(status: true).map{|con| con if con.section.name == "1ª Secção"}.compact
+    @juniores = Confirmation.all.where(status: true).map{|con| con if con.section.name == "2ª Secção"}.compact
+    @seniores = Confirmation.all.where(status: true).map{|con| con if con.section.name == "3ª Secção"}.compact
+    @caminheiros = Confirmation.all.where(status: true).map{|con| con if con.section.name == "4ª Secção"}.compact
   end
 
   def lobitos
