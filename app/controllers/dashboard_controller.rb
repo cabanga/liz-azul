@@ -18,7 +18,7 @@ class DashboardController < ApplicationController
   end
 
   def caminheiros
-    @confirmations = Confirmation.all.where(status: true).map{|con| con if con.section.name == "Caminheiro"}.compact
+    @confirmations = Confirmation.all.where(status: true).map{|con| con if con.section.name == "4ª Secção"}.compact
   end
 
   def dirigentes
