@@ -25,7 +25,7 @@ class ConfirmationsController < ApplicationController
 
     respond_to do |format|
       if @confirmation.save
-        format.html { redirect_to @confirmation, notice: "Confirmation was successfully created." }
+        format.html { redirect_to confirmations_path, notice: "Confirmation was successfully created." }
         format.json { render :show, status: :created, location: @confirmation }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class ConfirmationsController < ApplicationController
   def update
     respond_to do |format|
       if @confirmation.update(confirmation_params)
-        format.html { redirect_to @confirmation, notice: "Confirmation was successfully updated." }
+        format.html { redirect_to confirmations_path, notice: "Confirmation was successfully updated." }
         format.json { render :show, status: :ok, location: @confirmation }
       else
         format.html { render :edit, status: :unprocessable_entity }
