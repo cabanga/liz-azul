@@ -7,6 +7,10 @@ class Scout < ApplicationRecord
 
     before_create { self.reference_numer = generate_reference }
 
+    def current_confirmation
+        self.confirmations.where(status: true).first
+    end
+
     def generate_reference
       letter_code = "AG11-"
       last_code = Scout.last

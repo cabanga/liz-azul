@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   devise_for :users
   root 'site#index'
   get '/dashboard',       to: 'dashboard#index',   as: 'dashboard'
+  get '/consultar-escuteiro',       to: 'site#scout_search',   as: 'scout_search'
 
   get '/dashboard/lobitos',        to: 'dashboard#lobitos',    as: 'lobitos'
   get '/dashboard/juniores',       to: 'dashboard#juniores',   as: 'juniores'

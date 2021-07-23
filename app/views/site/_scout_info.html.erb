@@ -1,0 +1,40 @@
+
+<div class="card card-profile">
+    <img src="/template/img/theme/img-1-1000x600.jpg" alt="Image placeholder" class="card-img-top">
+
+    <div class="row justify-content-center">
+        <div class="col-lg-3 order-lg-2">
+            <div class="card-profile-image">
+                <a href="#"><img src="/user.jpg" class="rounded-circle"></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
+        <div class="d-flex justify-content-between">
+        </div>
+    </div>
+
+    <div class="card-body pt-0">
+        <div class="row">
+            <div class="col-md-6">
+                <p><i class="ni education_hat mr-2"></i>INFORMAÇÕES DO ESCUTEIRO</p>
+                <hr>
+                <p><strong><%= @scout.name %></strong></p>
+                <p><strong>Nº Ident. Interna:</strong> <%= @scout.reference_numer %></p>
+                <p><strong>Data de Ingresso:</strong> <%= @scout.started_at&.strftime("%d/%m/%Y") %></p>
+                <p><strong>Nº Identificação:</strong> <%= @scout.identification_number %></p>
+                <p><strong>Contacto:</strong> <%= @scout.cell_phone1 %></p>
+            </div>
+
+            <div class="col-md-6">
+                <p><i class="ni education_hat mr-2"></i>INFORMAÇÕES DO ENCARREGADO</p>
+                <hr>
+                <p><strong>Nome Encarregado:</strong> <%= @scout.parent_name %></p>
+                <p><strong>Contacto Encarregado:</strong> <%= @scout.cell_phone2 %></p>
+            </div>
+        </div>
+    </div>
+
+
+</div>
