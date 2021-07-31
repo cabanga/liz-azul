@@ -3,7 +3,15 @@
         <div class="header-body">
             <div class="row align-items-center py-4">
                 <div class="col-lg-6 col-7">
-                    <h6 class="h2 text-white d-inline-block mb-0">Dashboard</h6>
+                    <h6 class="h2 text-white d-inline-block mb-0">Lista de todos Escuteiros</h6>
+                    <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+                        <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                            <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
+                            <li class="breadcrumb-item"><a href="<%= dashboard_path %>">Dashboard</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Escuteiros</li>
+                        </ol>
+                    </nav>
+
                 </div>
             </div>
         </div>
@@ -29,11 +37,12 @@
                         <thead class="thead-light">
                             <tr>
                                 <th scope="col" class="sort">Nome completo</th>
+                                <th scope="col" class="sort text-center">Nº Ident. Interna (NII)</th>
                                 <th scope="col" class="sort">Tipo Identidade</th>
-                                <th scope="col" class="sort">Nº Identidade</th>
-                                <th scope="col" class="sort">Data Nascimento</th>
-                                <th scope="col" class="sort">Idade</th>
-                                <th scope="col" class="sort">Data de Ingresso</th>
+                                <th scope="col" class="sort text-center">Nº Identidade</th>
+                                <th scope="col" class="sort text-center">Data Nascimento</th>
+                                <th scope="col" class="sort text-center">Idade</th>
+                                <th scope="col" class="sort text-center">Data de Ingresso</th>
                                 <th scope="col"></th>
                             </tr>
                         </thead>
@@ -44,19 +53,19 @@
                                     <th scope="row">
                                         <div class="media align-items-center">
                                             <a href="#" class="avatar rounded-circle mr-3">
-                                            <img alt="Image placeholder" src="/template/img/theme/bootstrap.jpg">
+                                            <img alt="Image placeholder" src="/user.jpg">
                                             </a>
                                             <div class="media-body">
                                                 <span class="name mb-0 text-sm"><%= scout.name %></span>
                                             </div>
                                         </div>
                                     </th>
-
-                                    <td class="budget"><%= scout.identification_type %></td>
-                                    <td class="budget"><%= scout.identification_number %></td>
-                                    <td class="budget"><%= scout.birth_at&.strftime("%d/%m/%Y") %></td>
-                                    <td class="budget"><%= scout_year(scout.birth_at) %></td>
-                                    <td class="budget"><%= scout.started_at&.strftime("%d/%m/%Y") %></td>
+                                    <td class="budget text-center"><%= scout.reference_numer %></td>
+                                    <td class="budget"><%= scout.identification_type.titleize %></td>
+                                    <td class="budget text-center"><%= scout.identification_number %></td>
+                                    <td class="budget text-center"><%= scout.birth_at&.strftime("%d/%m/%Y") %></td>
+                                    <td class="budget text-center"><%= scout_year(scout.birth_at) %></td>
+                                    <td class="budget text-center"><%= scout.started_at&.strftime("%d/%m/%Y") %></td>
                                     <td class="text-right">
                                         <div class="dropdown">
                                             <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -79,10 +88,5 @@
         </div>
     </div>
 </div>
-
-
-
-
-
 
 <br>

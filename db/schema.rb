@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_13_140645) do
+ActiveRecord::Schema.define(version: 2021_07_14_114654) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "confirmations", force: :cascade do |t|
+    t.bigint "scout_id", null: false
+    t.string "slug"
+    t.datetime "year_at", default: "2021-07-14 12:43:38", null: false
+    t.bigint "position_id", null: false
+    t.bigint "section_id", null: false
+    t.boolean "status", default: true, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["position_id"], name: "index_confirmations_on_position_id"
+    t.index ["scout_id"], name: "index_confirmations_on_scout_id"
+    t.index ["section_id"], name: "index_confirmations_on_section_id"
+  end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
@@ -24,6 +38,13 @@ ActiveRecord::Schema.define(version: 2021_07_13_140645) do
     t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
+  end
+
+  create_table "positions", force: :cascade do |t|
+    t.string "name"
+    t.string "slug"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "scouts", force: :cascade do |t|
@@ -37,6 +58,15 @@ ActiveRecord::Schema.define(version: 2021_07_13_140645) do
     t.string "cell_phone2"
     t.string "reference_numer"
     t.string "slug"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "sections", force: :cascade do |t|
+    t.string "name"
+    t.string "slug"
+    t.integer "start_age", default: 0, null: false
+    t.integer "end_age", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -81,5 +111,8 @@ ActiveRecord::Schema.define(version: 2021_07_13_140645) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
+  add_foreign_key "confirmations", "positions"
+  add_foreign_key "confirmations", "scouts"
+  add_foreign_key "confirmations", "sections"
   add_foreign_key "subscrytion_years", "scouts"
 end

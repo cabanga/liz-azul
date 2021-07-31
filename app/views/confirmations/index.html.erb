@@ -1,0 +1,87 @@
+<div class="header bg-default pb-6">
+    <div class="container-fluid">
+        <div class="header-body">
+            <div class="row align-items-center py-4">
+                <div class="col-lg-6 col-7">
+                    <h6 class="h2 text-white d-inline-block mb-0">Lista dos Escuteiros Confirmados</h6>
+                    <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+                        <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                            <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
+                            <li class="breadcrumb-item"><a href="<%= dashboard_path %>">Dashboard</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Escuteiros Confirmados</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page content -->
+
+<br>
+<br>
+
+<div class="container-fluid mt--6">
+    <!-- Table -->
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <!-- Card header -->
+                <div class="card-header border-0">
+                <h3 class="mb-0">Escuteiros Confirmados</h3>
+                </div>
+                <!-- Light table -->
+                <div class="table-responsive">
+                    <table class="table align-items-center table-flush">
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col" class="sort">Nome completo</th>
+                                <th scope="col" class="sort text-center">NII</th>
+                                <th scope="col" class="sort text-center">Estado</th>
+                                <th scope="col" class="sort text-center">Cargo</th>
+                                <th scope="col" class="sort text-center">Ano Escutista Ref.</th>
+                                <th scope="col" class="sort text-center">Data da Confirmação</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+
+                        <tbody class="list">
+                            <% @confirmations.each do |confirmation| %>
+                                <tr>
+                                    <th scope="row">
+                                        <div class="media align-items-center">
+                                            <a href="#" class="avatar rounded-circle mr-3">
+                                            <img alt="Image placeholder" src="/user.jpg">
+                                            </a>
+                                            <div class="media-body">
+                                                <span class="name mb-0 text-sm"><%= confirmation.scout.name %></span>
+                                            </div>
+                                        </div>
+                                    </th>
+
+                                    <td class="budget text-center"><%= confirmation.scout.reference_numer %></td>
+                                    <td class="budget text-center">
+                                        <% if confirmation.status %>
+                                          <span class="badge badge-pill badge-success">Activo</span>
+                                        <% else %>
+                                            <span class="badge badge-pill badge-danger">Inactivo</span>
+                                        <% end %>
+                                    </td>
+                                    <td class="budget text-center"><%= confirmation.position.name %></td>
+                                    <td class="budget text-center"><%= confirmation.year_at&.strftime("%Y") %></td>
+                                    <td class="budget text-center"><%= confirmation.created_at&.strftime("%d/%m/%Y") %></td>
+                                    <td class="text-right">
+                                        <%= link_to 'Actualizar', edit_confirmation_path(confirmation), class: "btn btn-primary btn-sm" %>
+                                    </td>
+                                </tr>
+                            <% end %>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>

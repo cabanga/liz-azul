@@ -1,0 +1,76 @@
+<div class="header bg-default pb-6">
+    <div class="container-fluid">
+        <div class="header-body">
+            <div class="row align-items-center py-4">
+                <div class="col-lg-6 col-7">
+                    <h6 class="h2 text-white d-inline-block mb-0">Lista das Secções & Unidades</h6>
+                    <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+                        <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                            <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
+                            <li class="breadcrumb-item"><a href="<%= dashboard_path %>">Dashboard</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Secções & Unidades</li>
+                        </ol>
+                    </nav>
+                </div>
+
+                <div class="col text-right">
+                    <%= link_to 'Nova Unidade', new_section_path, class: "btn btn-success btn-sm" %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page content -->
+
+<br>
+<br>
+
+<div class="container-fluid mt--6">
+    <!-- Table -->
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <!-- Card header -->
+                <div class="card-header border-0">
+                <h3 class="mb-0">Lista das Secções & Unidades</h3>
+                </div>
+                <!-- Light table -->
+                <div class="table-responsive">
+                    <table class="table align-items-center table-flush">
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col" class="sort">Nome</th>
+                                <th scope="col" class="sort text-center">Idade de Entrada</th>
+                                <th scope="col" class="sort text-center">Idade de Saida</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+
+                        <tbody class="list">
+                            <% @sections.each do |section| %>
+                                <tr>
+                                    <td class="budget"><%= section.name.titleize %></td>
+                                    <td class="budget text-center"><%= section.start_age %></td>
+                                    <td class="budget text-center"><%= section.end_age %></td>
+                                    <td class="text-right">
+                                        <%= link_to 'Actualizar', edit_section_path(section), class: "btn btn-primary btn-sm" %>
+                                    </td>
+                                </tr>
+                            <% end %>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+
+
+<style>
+    .table th, .table td {
+        padding: 15px;
+    }
+</style>

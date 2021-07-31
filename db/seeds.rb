@@ -7,5 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create(email: "manucabanga@gmail.com", blocked: false, name: "JM Cabanga", role: 222, password: 'q1w2e3r4', password_confirmation: 'q1w2e3r4')
+<<<<<<< HEAD
 
 # pg_restore --verbose --clean --no-acl --no-owner -h localhost -U jm -d ag11_development latest.dump
+=======
+User.create(email: "meidyluis@gmail.com", blocked: false, name: "Meidy Ricardo", role: 222, password: 'q1w2e3r4', password_confirmation: 'q1w2e3r4')
+
+>>>>>>> main

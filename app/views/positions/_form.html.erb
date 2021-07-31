@@ -1,0 +1,47 @@
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+        
+          <div class="card">
+
+            <div class="card-header" style="background-color: #b39fd4;">
+                <div class="row align-items-center">
+                    <div class="col-8">
+                        <h3 class="mb-0"><%= @position.id.present? ? "Actulizar Informações" : "Registar Cargo ou Posição" %></h3>
+                    </div>
+                    <div class="col-4 text-right">
+
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card-body">
+                <%= simple_form_for(@position) do |f| %>
+                    <%= f.error_notification %>
+                    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+                    <div class="pl-lg-4">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-username">Nome ou Tipo</label>
+                                    <%= f.input :name, label: false %>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+
+                    <div class="pl-lg-4">
+                        <%= f.button :submit, "Registar", class: "btn btn-sm btn-success" %>
+                        <%= link_to 'Cancelar', positions_path, class: "btn btn-sm btn-primary" %>
+                    </div>
+                <% end %>
+            </div>
+
+        </div>
+    </div>
+</div>
+
