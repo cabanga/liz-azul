@@ -7,6 +7,10 @@ class ConfirmationsController < ApplicationController
     @confirmations = Confirmation.all
   end
 
+  def pending
+    @scouts = Scout.all.select{|s| s.confirmations.blank?}
+  end
+
   # GET /confirmations/1 or /confirmations/1.json
   def show
   end

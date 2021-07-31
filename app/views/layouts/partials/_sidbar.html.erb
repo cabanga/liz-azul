@@ -58,24 +58,30 @@
                     </li>
 
                     <li class="nav-item">
+                        <a class="nav-link" href="<%= new_scout_path %>">
+                            <i class="ni ni-send"></i>
+                            <span class="nav-link-text">Registar Escuteiro</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
                         <a class="nav-link" style="background: #ff980054;" href="<%= new_confirmation_path %>">
                             <i class="ni ni-shop text-white"></i>
                             <span class="nav-link-text">Nova confirmação</span>
                         </a>
                     </li>
 
-
                     <li class="nav-item">
-                        <a class="nav-link" href="<%= new_scout_path %>">
-                        <i class="ni ni-spaceship"></i>
-                        <span class="nav-link-text">Registar Escuteiro</span>
+                        <a class="nav-link" href="<%= pending_path %>">
+                            <i class="ni ni-circle-08"></i>
+                            <span class="nav-link-text">Escuteiros Não confirmados</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link" href="<%= confirmations_path %>">
-                        <i class="ni ni-spaceship"></i>
-                        <span class="nav-link-text">Lista de confirmações</span>
+                            <i class="ni ni-planet"></i>
+                            <span class="nav-link-text">Lista de confirmações</span>
                         </a>
                     </li>
 

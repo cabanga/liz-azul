@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   resources :confirmations
   get '/confirmation/:id',         to: 'confirmations#confirmation_scout', as: 'confirmation_scout'
+  get '/pending',                  to: 'confirmations#pending', as: 'pending'
 
+  
   resources :sections
   resources :positions
   resources :scouts

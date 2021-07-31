@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
         
             <div class="card card-profile">
                 <img src="/template/img/theme/img-1-1000x600.jpg" alt="Image placeholder" class="card-img-top">
@@ -22,7 +22,7 @@
 
                 <div class="card-body pt-0">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <p><i class="ni education_hat mr-2"></i>INFORMAÇÕES DO ESCUTEIRO</p>
                             <hr>
                             <p><strong><%= @scout.name %></strong></p>
@@ -35,12 +35,27 @@
                             <p><strong>Contacto:</strong> <%= @scout.cell_phone1 %></p>
                         </div>
 
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <p><i class="ni education_hat mr-2"></i>INFORMAÇÕES DO ENCARREGADO</p>
                             <hr>
                             <p><strong>Nome Encarregado:</strong> <%= @scout.parent_name %></p>
                             <p><strong>Contacto Encarregado:</strong> <%= @scout.cell_phone2 %></p>
                         </div>
+
+                        <div class="col-md-4">
+                            <p><i class="ni education_hat mr-2"></i>HISTORICO ESCUTISTA</p>
+                            <hr>
+                            <% if @scout.current_confirmation.present? %>
+                                <p><strong>Cargo atual:</strong> <%= @scout.current_confirmation.position.name %></p>
+                                <p><strong>Secção atual:</strong> <%= @scout.current_confirmation.section.name %></p>
+                                <p><strong>Ano escutista:</strong> <%= @scout.current_confirmation.year_at&.strftime("%Y") %></p>
+                                <p><strong>Data da Confirmação:</strong> <%= @scout.current_confirmation.created_at&.strftime("%d/%m/%Y") %></p>
+                            <% else %>
+                                <h1 class="display-4 font-weight-light mb-0">Escuteiro não confirmado</h1>
+                            <% end %>
+                        </div>
+
+
                     </div>
                 </div>
 
