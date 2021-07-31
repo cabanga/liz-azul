@@ -1,5 +1,6 @@
 class ConfirmationsController < ApplicationController
   before_action :set_confirmation, only: %i[ show edit update destroy ]
+  before_action :set_scout, only: %i[ confirmation_scout ]
 
   # GET /confirmations or /confirmations.json
   def index
@@ -17,6 +18,11 @@ class ConfirmationsController < ApplicationController
 
   # GET /confirmations/1/edit
   def edit
+  end
+
+  def confirmation_scout
+    @confirmation = Confirmation.new(scout_id: @scout.id)
+
   end
 
   # POST /confirmations or /confirmations.json
@@ -57,6 +63,10 @@ class ConfirmationsController < ApplicationController
   end
 
   private
+    def set_scout
+      @scout = Scout.friendly.find(params[:id])
+    end
+    
     # Use callbacks to share common setup or constraints between actions.
     def set_confirmation
       @confirmation = Confirmation.friendly.find(params[:id])

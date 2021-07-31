@@ -1,0 +1,65 @@
+<br>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+        
+          <div class="card">
+
+            <div class="card-header" style="background-color: #b39fd4;">
+                <div class="row align-items-center">
+                    <div class="col-8">
+                        <h3 class="mb-0"><%= @confirmation.id.present? ? "Actulizar Informações" : "Registar Cargo ou Posição" %></h3>
+                    </div>
+                    <div class="col-4 text-right">
+
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card-body">
+                <%= simple_form_for(@confirmation) do |f| %>
+                    <%= f.error_notification %>
+                    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+                    <div class="pl-lg-4">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-username">Nome do escuteiro</label>
+                                    <h3 class="name-scout"><%= @scout.name %></h3>
+                                    <%= f.input :scout_id, as: :hidden, label: false %>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-username">Cargo à Ocupar</label>
+                                    <%= f.association :position, label: false %>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-username">Secção Associada</label>
+                                    <%= f.association :section, label: false %>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-username">Ano escutista à confirmar</label>
+                                    <%= f.input :year_at, as: :date, start_year: Date.today.year - 2, end_year: Date.today.year, order: [:year], input_html: { type: 'date' }, label: false %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="pl-lg-4">
+                        <%= f.button :submit, "Registar", class: "btn btn-sm btn-success" %>
+                        <%= link_to 'Cancelar', confirmations_path, class: "btn btn-sm btn-primary" %>
+                    </div>
+                <% end %>
+            </div>
+
+        </div>
+    </div>
+</div>
