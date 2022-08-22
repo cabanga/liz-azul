@@ -54,7 +54,6 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem 'vimeo_api_client', git: 'https://github.com/agilie/vimeo-api-gem'
 gem 'devise'
 gem 'friendly_id', '~> 5.4.0'
 gem 'simple_form'
