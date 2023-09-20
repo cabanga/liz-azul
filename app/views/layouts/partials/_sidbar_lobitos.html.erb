@@ -1,0 +1,51 @@
+<div class="collapse navbar-collapse" id="sidenav-collapse-main">
+    <!-- Nav items -->
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link active" href="<%= dashboard_path %>">
+                <i class="ni ni-shop text-primary"></i>
+                <span class="nav-link-text">Dashboards</span>
+            </a>
+        </li>
+    </ul>
+
+    <ul class="navbar-nav mb-md-3">
+        <li class="nav-item">
+            <a class="nav-link" href="<%= new_scout_path %>">
+                <i class="ni ni-send"></i>
+                <span class="nav-link-text">Registar Escuteiro</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" style="background: #ff980054;" href="<%= new_confirmation_path %>">
+                <i class="ni ni-shop text-white"></i>
+                <span class="nav-link-text">Nova confirmação</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="<%= confirmations_path %>">
+                <i class="ni ni-planet"></i>
+                <span class="nav-link-text">Lista de confirmações</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="<%= lobitos_path %>">
+                <i class="ni ni-chart-pie-35" style="color: #ffc107;"></i>
+                <span class="nav-link-text">Lista Lobitos</span>
+            </a>
+        </li>
+
+        <hr class="my-3">
+
+        <li class="nav-item">
+            <a class="nav-link active" href="<%= destroy_user_session_path %>">
+                <i class="ni ni-shop text-danger"></i>
+                <span class="nav-link-text">Terminar sessão</span>
+            </a>
+        </li>
+        
+    </ul>
+</div>

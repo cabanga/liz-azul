@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_14_114654) do
+ActiveRecord::Schema.define(version: 2022_08_22_131636) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2021_07_14_114654) do
   create_table "confirmations", force: :cascade do |t|
     t.bigint "scout_id", null: false
     t.string "slug"
-    t.datetime "year_at", default: "2022-08-22 09:50:04", null: false
+    t.datetime "year_at", default: "2021-07-15 08:24:04", null: false
     t.bigint "position_id", null: false
     t.bigint "section_id", null: false
     t.boolean "status", default: true, null: false
@@ -71,6 +71,16 @@ ActiveRecord::Schema.define(version: 2021_07_14_114654) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "subscrytion_years", force: :cascade do |t|
+    t.datetime "year_at"
+    t.bigint "scout_id", null: false
+    t.integer "section", default: 1, null: false
+    t.string "slug"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["scout_id"], name: "index_subscrytion_years_on_scout_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -95,6 +105,7 @@ ActiveRecord::Schema.define(version: 2021_07_14_114654) do
     t.datetime "locked_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "kind", default: 0, null: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
@@ -104,4 +115,5 @@ ActiveRecord::Schema.define(version: 2021_07_14_114654) do
   add_foreign_key "confirmations", "positions"
   add_foreign_key "confirmations", "scouts"
   add_foreign_key "confirmations", "sections"
+  add_foreign_key "subscrytion_years", "scouts"
 end
