@@ -10,20 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_22_131636) do
-
+ActiveRecord::Schema[7.0].define(version: 2023_09_20_122134) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "confirmations", force: :cascade do |t|
     t.bigint "scout_id", null: false
     t.string "slug"
-    t.datetime "year_at", default: "2021-07-15 08:24:04", null: false
+    t.datetime "year_at", precision: nil, default: "2021-07-15 08:24:04", null: false
     t.bigint "position_id", null: false
     t.bigint "section_id", null: false
     t.boolean "status", default: true, null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["position_id"], name: "index_confirmations_on_position_id"
     t.index ["scout_id"], name: "index_confirmations_on_scout_id"
     t.index ["section_id"], name: "index_confirmations_on_section_id"
@@ -34,7 +33,7 @@ ActiveRecord::Schema.define(version: 2022_08_22_131636) do
     t.integer "sluggable_id", null: false
     t.string "sluggable_type", limit: 50
     t.string "scope"
-    t.datetime "created_at"
+    t.datetime "created_at", precision: nil
     t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
@@ -43,23 +42,23 @@ ActiveRecord::Schema.define(version: 2022_08_22_131636) do
   create_table "positions", force: :cascade do |t|
     t.string "name"
     t.string "slug"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "scouts", force: :cascade do |t|
     t.string "name"
     t.integer "identification_type", default: 0, null: false
     t.string "identification_number"
-    t.datetime "birth_at"
-    t.datetime "started_at"
+    t.datetime "birth_at", precision: nil
+    t.datetime "started_at", precision: nil
     t.string "parent_name"
     t.string "cell_phone1"
     t.string "cell_phone2"
     t.string "reference_numer"
     t.string "slug"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "sections", force: :cascade do |t|
@@ -67,17 +66,17 @@ ActiveRecord::Schema.define(version: 2022_08_22_131636) do
     t.string "slug"
     t.integer "start_age", default: 0, null: false
     t.integer "end_age", default: 0
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "subscrytion_years", force: :cascade do |t|
-    t.datetime "year_at"
+    t.datetime "year_at", precision: nil
     t.bigint "scout_id", null: false
     t.integer "section", default: 1, null: false
     t.string "slug"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["scout_id"], name: "index_subscrytion_years_on_scout_id"
   end
 
@@ -89,22 +88,22 @@ ActiveRecord::Schema.define(version: 2022_08_22_131636) do
     t.string "name"
     t.integer "role", default: 0, null: false
     t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
+    t.datetime "reset_password_sent_at", precision: nil
+    t.datetime "remember_created_at", precision: nil
     t.integer "sign_in_count", default: 0, null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
+    t.datetime "current_sign_in_at", precision: nil
+    t.datetime "last_sign_in_at", precision: nil
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
     t.string "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
+    t.datetime "confirmed_at", precision: nil
+    t.datetime "confirmation_sent_at", precision: nil
     t.string "unconfirmed_email"
     t.integer "failed_attempts", default: 0, null: false
     t.string "unlock_token"
-    t.datetime "locked_at"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "locked_at", precision: nil
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer "kind", default: 0, null: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
