@@ -5,7 +5,7 @@ set :application, "liz_azul"
 set :repo_url, "git@github.com:cabanga/liz-azul.git"
 
 set :deploy_to, "/opt/#{fetch :application}"
-append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads'
+append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads', 'node_modules'
 set :keep_releases, 5
 set :passenger_restart_with_touch, true
 
