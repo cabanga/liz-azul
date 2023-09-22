@@ -2,7 +2,15 @@
 lock "~> 3.17.3"
 
 set :application, "liz_azul"
-set :repo_url, "git@example.com:me/my_repo.git"
+set :repo_url, "git@github.com:cabanga/liz-azul.git"
+
+set :deploy_to, "/opt/#{fetch :application}"
+append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads'
+set :keep_releases, 5
+set :passenger_restart_with_touch, true
+
+
+
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -19,7 +27,6 @@ set :repo_url, "git@example.com:me/my_repo.git"
 
 # Default value for :pty is false
 # set :pty, true
-set :passenger_restart_with_touch, true
 
 # Default value for :linked_files is []
 # append :linked_files, "config/database.yml", 'config/master.key'
