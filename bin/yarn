@@ -8,7 +8,7 @@ Dir.chdir(APP_ROOT) do
     find { |file| File.executable?(file) }
 
   if yarn
-    exec yarn, *ARGV
+    exec "yarnpkg #{ARGV.join(" ")}"
   else
     $stderr.puts "Yarn executable was not detected in the system."
     $stderr.puts "Download Yarn at https://yarnpkg.com/en/docs/install"
