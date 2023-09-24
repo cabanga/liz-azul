@@ -7,6 +7,8 @@ set :repo_url, "git@github.com:cabanga/liz-azul.git"
 set :deploy_to, "/opt/#{fetch :application}"
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads'
 
+#set :branch, 'master'
+
 set :default_env, {
   path: "$HOME/nodejs/bin:$PATH"
 }
